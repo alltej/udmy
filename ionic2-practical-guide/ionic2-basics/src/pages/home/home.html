@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic 2 Basics
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <button ion-button [navPush]="usrPage">Users</button>
+  <button ion-button [navPush]="shopPage">Shop</button>
+
+
+  <button ion-button (click)="onGoToUsers()">Go To Users</button>
+</ion-content>
