@@ -15,7 +15,7 @@ export class QuotePage {
    //modal is still loaded like a page although not accessible via the NavController
   ionViewDidLoad(){
       this.person = this.navParams.get('person');
-      this.text = this.navParams.get('text');
+      this.text = this.navParams.get('text');;
   }
 
   onClose(remove = false){
