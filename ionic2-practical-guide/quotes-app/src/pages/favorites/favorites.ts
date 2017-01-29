@@ -25,14 +25,10 @@ export class FavoritesPage {
     modal.present();
      modal.onDidDismiss((remove: boolean) =>{
        if ( remove){
-         this.quotesService.removeQuoteToFavorites(quote);
          // alt 1: reload the quotes array from service
          //this.quotes = this.quotesService.getFavoriteQuotes();
          // alt 2. remove quote from array
-         const position = this.quotes.findIndex((quoteEl: Quote) =>{
-           return quoteEl.id == quote.id;
-         })
-         this.quotes.splice(position, 1);
+         this.onRemoveFromFavorites(quote);
        }
        //console.log('D ' + remove);
      });
@@ -40,4 +36,15 @@ export class FavoritesPage {
     //   (remove: boolean) => console.log('S ' + remove)
     // )
   }
+
+
+  onRemoveFromFavorites(quote: Quote)
+  {
+    this.quotesService.removeQuoteToFavorites(quote);
+    const position = this.quotes.findIndex((quoteEl: Quote) =>{
+      return quoteEl.id == quote.id;
+    })
+    this.quotes.splice(position, 1);
+  }
+
 }
